@@ -13,11 +13,7 @@ export class AppComponent {
   dataList: User[] = [];
   currentUser: User = new User();
 
-  // depdendency injection not working
-  userService: UserService;
-
-  constructor(userService: UserService) {
-    this.userService = userService; // depdendency injection not working
+  constructor(private userService: UserService) {
     this.dataList = userService.list;
   }
 
